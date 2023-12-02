@@ -1,0 +1,53 @@
+#include <stdio.h>
+void main()
+{
+  int n,ch,a;
+  do{
+    printf("1: Insert\n2:Delete\n3:Inorder\n4:Postorder\n5:Preorder\n");
+    printf("Enter the option:");
+    scanf("%d",&ch);
+    switch(ch){
+      case 1:printf("Enter the element:");
+      scanf("%d",&n);
+      root=insert(root,n);
+      break;
+      case 2:printf("Enter the element:");
+      scanf("%d",&n);
+      root=delnode(root,n);
+      break;
+      case 3:printf("Tree :");
+      inorder(root);
+      break;
+      case 4:printf("Tree :");
+      postorder(root);
+      break;
+      case 5:printf("Tree :");
+      postorder(root);
+      break;
+    }
+    printf("Exit? ()1/0) :");
+    scanf("%d",&a)
+  }while(a==1);
+}
+struct node *minvalues(struct node *node)
+{
+  struct node *c=node;
+  while(c->lc!=NULL)
+  {
+    c=c->lc;
+    return c;
+  }
+}
+struct node *delnode(struct node *tree,int data)
+{
+  if(tree==NULL)
+  return tree;
+  else if(data < tree->data)
+  tree->lc=delnode(tree->lc,data);
+  else if(data > tree->data)
+  tree->rc=delnode(tree->rc,data);
+  else
+  {
+    if
+  }
+}
